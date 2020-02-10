@@ -1,6 +1,8 @@
 package main;
 import java.util.*;
 import Pokemon.*;
+import Basicpoke.basicpoke;
+
 /*class basicpoke{
     public int hp;
     public int sp;
@@ -10,7 +12,6 @@ import Pokemon.*;
     public int skill2 = 0;
     public int level = 0;
 }*/
-
 public class pokemon {
     public static void main(String[] args){
         int i = 0 ;
