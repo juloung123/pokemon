@@ -1,5 +1,6 @@
 package Basicpoke;
 import java.util.*;
+import bag.*;
 
 public class basicpoke{
     public int hp;
@@ -88,12 +89,27 @@ public class basicpoke{
         Random rand = new Random();
         int value = rand.nextInt(5);  // Can get Red Potion if random is 0 and Blue Potion is 1 another don't get anything
         if (value == 0){
-            bag.Red();
+            bag.hppo();
             System.out.println("You get Red Potion 1");
         }
         else if(value == 1){
-            bag.Blue();
+            bag.sppo();
             System.out.println("You get Blue Potion 1");
+        }
+    }
+    public void changeHpAndSp(){
+        this.hp = 100 *level;
+        this.MaxHp = hp;
+        this.sp = hp;
+    }
+    public void setLv(int exp){
+        int levelUp;
+        levelUp = level*100;
+        if(exp >= levelUp){
+            this.exp = exp - levelUp;
+            level = level + 1;
+            System.out.println("Congratulations !! You level up");
+            changeHpAndSp();
         }
     }
 }

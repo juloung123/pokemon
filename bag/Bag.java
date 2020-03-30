@@ -30,7 +30,7 @@ public class Bag{
         Item a2 = new Berries(1,"Berries",1);
         items.add(a2);
     }
-    public void sopo(){
+    public void sppo(){
         Item a3 = new SpPotion(1,"SpPotion",1);
         items.add(a3);
     }
