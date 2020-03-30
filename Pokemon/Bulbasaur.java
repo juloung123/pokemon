@@ -2,101 +2,55 @@ package Pokemon;
 import Basicpoke.basicpoke;
 
 public class Bulbasaur extends basicpoke{
-    public int hp = 45;
-    public int sp = 13;
-    public int atk = 49;
-    public int def = 49;
-    public int skill1 = 55;
-    public int skill2 = 60;
-    public int level = 1;
-    /*public int hp(){
-        return 45;
-    }
-    public int sp(){
-        return 13;
-    }
-    public int atk(){
-        return 49;
-    }
-    public int def(){
-        return 49;
-    }
-    public int skill1(){
-        return 55;
-    }
-    public int skill2(){
-        return 60;
-    }
-    public int level(){
-        return 1;
-    }*/
-}
-class Charmander{
-    public int hp(){
-        return 39;
-    }
-    public int sp(){
-        return 11;
-    }
-    public int atk(){
-        return 52;
-    }
-    public int def(){
-        return 43;
-    }
-    public int skill1(){
-        return 60;
-    }
-    public int skill2(){
-        return 65;
-    }
-    public int level(){
-        return 1;
+    public Bulbasaur()
+    {
+        Race = "Grass";
+        hp = 45;
+        sp = 13;
+        atk = 49;
+        def = 49;
+        skill = 55;
+        level = 1;
+        exp = 0;
+        MaxHp = 45;
     }
 }
-class Squirtle{
-    public int hp(){
-        return 44;
+/*class Charmander extends basicpoke{
+    public Charmander(){
+        Race = "Fire";
+        hp = 39;
+        sp = 11;
+        atk = 52;
+        def = 43;
+        skill = 60;
+        level = 1;
+        exp = 0;
+        MaxHp = 39;
     }
-    public int sp(){
-        return 13;
+}*/
+/*class Squirtle extends basicpoke{
+    public Squirtle(){
+        Race = "Water";
+        hp = 44;
+        sp = 13;
+        atk = 48;
+        def = 65;
+        skill = 52;
+        level = 1;
+        exp = 0;
+        MaxHp = 44;
     }
-    public int atk(){
-        return 48;
+}*/
+/*class Pikachu extends basicpoke{
+    public Pikachu(){
+        Race = "Electric";
+        hp = 45;
+        sp = 13;
+        atk = 80;
+        def = 50;
+        skill = 65;
+        level = 1;
+        exp = 0;
+        MaxHp = 45;
     }
-    public int def(){
-        return 65;
-    }
-    public int skill1(){
-        return 52;
-    }
-    public int skill2(){
-        return 58;
-    }
-    public int level(){
-        return 1;
-    }
-}
-class Pikachu{
-    public int hp(){
-        return 45;
-    }
-    public int sp(){
-        return 13;
-    }
-    public int atk(){
-        return 80;
-    }
-    public int def(){
-        return 50;
-    }
-    public int skill1(){
-        return 65;
-    }
-    public int skill2(){
-        return 75;
-    }
-    public int level(){
-        return 1;
-    }
-}
+}*/

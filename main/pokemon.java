@@ -2,25 +2,34 @@ package main;
 import java.util.*;
 import Pokemon.*;
 import Basicpoke.basicpoke;
+import bag.*;
 
-/*class basicpoke{
-    public int hp;
-    public int sp;
-    public int atk = 0;
-    public int def = 0;
-    public int skill1 = 0;
-    public int skill2 = 0;
-    public int level = 0;
-}*/
 public class pokemon {
+
     public static void main(String[] args){
         int i = 0 ;
+        String name;
+        boolean event = true;
+        Bag bag = new Bag();
         Scanner scanner = new Scanner(System.in);
-        basicpoke p = new Bulbasaur();
+        System.out.print("Enter your name :");
+        name = scanner.next();
+        System.out.println("Welcome to Pokemon World " + name);
         System.out.println("Let select your Starter Poke !!");
         System.out.printf("1.Bulbasaur\n2.Charmander\n3.Squirtle\n4.Pikachu\n>");
         int selected = scanner.nextInt();
-        System.out.println(p.hp);
+        if(selected == 1){
+            Bulbasaur pokemonNo1 = new Bulbasaur();
+        }
+        else if(selected == 2){
+            Charmander pokemonNo1 = new Charmander();
+        }
+        else if(selected == 3){
+            Squirtle pokemonNo1 = new Squirtle();
+        }
+        else if(selected == 4){
+            Pikachu pokemonNo1 = new Pikachu();
+        }
     }
 }
 
