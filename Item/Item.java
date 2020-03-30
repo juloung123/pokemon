@@ -1,7 +1,5 @@
 package Item;
 
-import java.util.ArrayList;
-
 public class Item{
     public int itemId;
     public String name;
