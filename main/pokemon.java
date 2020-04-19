@@ -22,48 +22,147 @@ public class pokemon {
         System.out.printf("1.Bulbasaur\n2.Charmander\n3.Squirtle\n4.Pikachu\n>");
         int selected = scanner.nextInt();
         if(selected == 1){
-            Bulbasaur pokemonNo1 = new Bulbasaur();
-        }
-        else if(selected == 2){
-            Charmander pokemonNo1 = new Charmander();
-        }
-        else if(selected == 3){
-            Squirtle pokemonNo1 = new Squirtle();
-        }
-        else if(selected == 4){
-            Pikachu pokemonNo1 = new Pikachu();
-        }
-        while(event == true){
-            System.out.println("==========================");
-            System.out.println("1 . STATUS");
-            System.out.println("2 . HIT MONSTER");
-            System.out.println("3 . INVENTORY");
-            System.out.println("4 . Go to pokemon center");
-            System.out.println("5 . End game  or another");
-            System.out.println("==========================");
-            // event bar
-            System.out.print("select Event :");
-            Enter = scanner.nextInt();
-            //condition
-            if(Enter == 1){
-                pokemonNo1.status(pokemon1);
-            }
-            else if(Enter == 2){
-                pokemonNo1.hitMonster(bag);
-            }
-            else if(Enter == 3){
-                if(bag.empty() == true){
-                    System.out.println("Your bag is empty");
+            basicpoke pokemonNo1 = new Bulbasaur();
+            while(event == true){
+                System.out.println("==========================");
+                System.out.println("1 . STATUS");
+                System.out.println("2 . HIT MONSTER");
+                System.out.println("3 . INVENTORY");
+                System.out.println("4 . Go to pokemon center");
+                System.out.println("5 . End game  or another");
+                System.out.println("==========================");
+                // event bar
+                System.out.print("select Event :");
+                Enter = scanner.nextInt();
+                //condition
+                if(Enter == 1){
+                    pokemonNo1.status(pokemon1);
+                }
+                else if(Enter == 2){
+                    pokemonNo1.hitMonster(bag);
+                }
+                else if(Enter == 3){
+                    if(bag.empty() == true){
+                        System.out.println("Your bag is empty");
+                    }
+                    else{
+                        bag.showitem();
+                    }
+                }
+                else if(Enter == 4){
+                    pokemonNo1.regenHp(pokemonNo1.getMaxHp());//regen
                 }
                 else{
-                    bag.showitem();
+                    event = false; //End game
                 }
             }
-            else if(Enter == 4){
-                pokemonNo1.regenHp(pokemonNo1.getMaxHp());//regen
+        }
+        else if(selected == 2){
+            basicpoke pokemonNo1 = new Charmander();
+            while(event == true){
+                System.out.println("==========================");
+                System.out.println("1 . STATUS");
+                System.out.println("2 . HIT MONSTER");
+                System.out.println("3 . INVENTORY");
+                System.out.println("4 . Go to pokemon center");
+                System.out.println("5 . End game  or another");
+                System.out.println("==========================");
+                // event bar
+                System.out.print("select Event :");
+                Enter = scanner.nextInt();
+                //condition
+                if(Enter == 1){
+                    pokemonNo1.status(pokemon1);
+                }
+                else if(Enter == 2){
+                    pokemonNo1.hitMonster(bag);
+                }
+                else if(Enter == 3){
+                    if(bag.empty() == true){
+                        System.out.println("Your bag is empty");
+                    }
+                    else{
+                        bag.showitem();
+                    }
+                }
+                else if(Enter == 4){
+                    pokemonNo1.regenHp(pokemonNo1.getMaxHp());//regen
+                }
+                else{
+                    event = false; //End game
+                }
             }
-            else{
-                event = false; //End game
+        }
+        else if(selected == 3){
+            basicpoke pokemonNo1 = new Squirtle();
+            while(event == true){
+                System.out.println("==========================");
+                System.out.println("1 . STATUS");
+                System.out.println("2 . HIT MONSTER");
+                System.out.println("3 . INVENTORY");
+                System.out.println("4 . Go to pokemon center");
+                System.out.println("5 . End game  or another");
+                System.out.println("==========================");
+                // event bar
+                System.out.print("select Event :");
+                Enter = scanner.nextInt();
+                //condition
+                if(Enter == 1){
+                    pokemonNo1.status(pokemon1);
+                }
+                else if(Enter == 2){
+                    pokemonNo1.hitMonster(bag);
+                }
+                else if(Enter == 3){
+                    if(bag.empty() == true){
+                        System.out.println("Your bag is empty");
+                    }
+                    else{
+                        bag.showitem();
+                    }
+                }
+                else if(Enter == 4){
+                    pokemonNo1.regenHp(pokemonNo1.getMaxHp());//regen
+                }
+                else{
+                    event = false; //End game
+                }
+            }
+        }
+        else if(selected == 4){
+            basicpoke pokemonNo1 = new Pikachu();
+            while(event == true){
+                System.out.println("==========================");
+                System.out.println("1 . STATUS");
+                System.out.println("2 . HIT MONSTER");
+                System.out.println("3 . INVENTORY");
+                System.out.println("4 . Go to pokemon center");
+                System.out.println("5 . End game  or another");
+                System.out.println("==========================");
+                // event bar
+                System.out.print("select Event :");
+                Enter = scanner.nextInt();
+                //condition
+                if(Enter == 1){
+                    pokemonNo1.status(pokemon1);
+                }
+                else if(Enter == 2){
+                    pokemonNo1.hitMonster(bag);
+                }
+                else if(Enter == 3){
+                    if(bag.empty() == true){
+                        System.out.println("Your bag is empty");
+                    }
+                    else{
+                        bag.showitem();
+                    }
+                }
+                else if(Enter == 4){
+                    pokemonNo1.regenHp(pokemonNo1.getMaxHp());//regen
+                }
+                else{
+                    event = false; //End game
+                }
             }
         }
     }
