@@ -2,7 +2,8 @@ package Pokemon;
 import Basicpoke.basicpoke;
 
 public class Pikachu extends basicpoke{
-    public Pikachu(){
+    public Pikachu(String name){
+        super(name);
         Race = "Electric";
         hp = 45;
         sp = 13;

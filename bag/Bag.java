@@ -1,10 +1,10 @@
 package bag;
 import java.util.*;
 import Item.*;
-import Pokeball.*;
+/*import Pokeball.*;
 import hppotion.*;
 import Berry.*;
-import sppotion.*;
+import sppotion.*;*/
 
 public class Bag{
     public ArrayList<Item> items;

@@ -1,5 +1,4 @@
-package sppotion;
-import Item.*;
+package Item;
 
 public class SpPotion extends Item{
         public SpPotion(int id,String SpPotion,int amount){

@@ -2,8 +2,9 @@ package Pokemon;
 import Basicpoke.basicpoke;
 
 public class Bulbasaur extends basicpoke{
-    public Bulbasaur()
+    public Bulbasaur(String name)
     {
+        super(name);
         Race = "Grass";
         hp = 45;
         sp = 13;

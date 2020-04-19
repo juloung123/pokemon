@@ -2,7 +2,8 @@ package Pokemon;
 import Basicpoke.basicpoke;
 
 public class Charmander extends basicpoke{
-    public Charmander(){
+    public Charmander(String name){
+        super(name);
         Race = "Fire";
         hp = 39;
         sp = 11;

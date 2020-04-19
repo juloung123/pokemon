@@ -1,5 +1,4 @@
-package Berry;
-import Item.*;
+package Item;
 
 public class Berries extends Item{
         public Berries(int id,String Berries,int amount){

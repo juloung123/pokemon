@@ -2,7 +2,8 @@ package Pokemon;
 import Basicpoke.basicpoke;
 
 public class Squirtle extends basicpoke{
-    public Squirtle(){
+    public Squirtle(String name){
+        super(name);
         Race = "Water";
         hp = 44;
         sp = 13;

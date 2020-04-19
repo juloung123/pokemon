@@ -1,5 +1,4 @@
-package hppotion;
-import Item.*;
+package Item;
 
 public class HpPotion extends Item{
         public HpPotion(int id,String HpPotion,int amount){

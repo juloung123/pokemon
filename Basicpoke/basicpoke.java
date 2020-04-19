@@ -3,6 +3,7 @@ import java.util.*;
 import bag.*;
 
 public class basicpoke{
+    public String name;
     public int hp;
     public int sp;
     public int atk;
@@ -13,7 +14,8 @@ public class basicpoke{
     public String Race;
     public int MaxHp;
 
-    public basicpoke(){
+    public basicpoke(String name){
+        this.name = name;
         Race = "Nothing";
         hp = 1;
         sp = 1;
@@ -24,6 +26,14 @@ public class basicpoke{
         exp = 0;
         MaxHp = 1;
     }
+
+    public String getName(){
+        return name;
+    }
+    public String toString(){
+        return name;
+    }
+
     public void status(String name){
         System.out.println("Name :"+name);
             System.out.println("Race :" + Race);

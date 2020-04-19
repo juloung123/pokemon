@@ -7,20 +7,20 @@ import bag.*;
 public class pokemon {
 
     public static void main(String[] args){
-        int Enter;
+        /*int Enter;
         String name;
         String pokemon1;
         boolean event = true;
-        Bag bag = new Bag();
+        Bag bag = new Bag();*/
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter your name :");
         name = scanner.next();
-        System.out.print("Enter your first pokemon name :");
+        /*System.out.print("Enter your first pokemon name :");
         pokemon1 = scanner.next();
         System.out.println("Welcome to Pokemon World " + name);
         System.out.println("Let select your Starter Poke !!");
         System.out.printf("1.Bulbasaur\n2.Charmander\n3.Squirtle\n4.Pikachu\n>");
-        int selected = scanner.nextInt();
+        int selected = scanner.nextInt();*/
         if(selected == 1){
             basicpoke pokemonNo1 = new Bulbasaur();
             while(event == true){
