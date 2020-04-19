@@ -13,6 +13,7 @@ public class basicpoke{
     public int exp;
     public String Race;
     public int MaxHp;
+    public int Maxsp;
 
     public basicpoke(String name){
         this.name = name;
@@ -25,6 +26,7 @@ public class basicpoke{
         level = 1;
         exp = 0;
         MaxHp = 1;
+        Maxsp = 1;
     }
 
     public String getName(){
@@ -34,7 +36,7 @@ public class basicpoke{
         return name;
     }
 
-    public void status(String name){
+    public void status(){
         System.out.println("Name :"+name);
             System.out.println("Race :" + Race);
             System.out.println("Level :"+getLv());
@@ -43,6 +45,8 @@ public class basicpoke{
             System.out.println("SP :"+ getSp());
             System.out.println("Defence :" + getdef());
             System.out.println("Attack Damage " + getAttackDamage() + "\nSkill Damage"+ getMagicDamage());
+            System.out.println("MaxHp : " + MaxHp);
+            System.out.println("MaxSP : " + Maxsp);
     }
     public double getAttackDamage(){
         return atk;
@@ -68,12 +72,15 @@ public class basicpoke{
     public int getdef(){
         return def;
     }
+    public int getMaxSp(){
+        return Maxsp;
+    }
     public void setExp(int earn){
             exp = exp + earn;
         }
-    public void regenHp(int maxHp){
-        hp = maxHp;
-        sp = maxHp;
+    public void regenHp(){
+        hp = MaxHp;
+        sp = Maxsp;
         System.out.println("Your pokemon HP and SP Will be Regen");
     }
     public void setDamage(int damage){
@@ -81,10 +88,22 @@ public class basicpoke{
         if(hp <= 0 ){
             System.out.println("YOU Pokemon DIE !");
             System.out.println("Please Go to pokemon center!!");
+            hp = 0;
         }
     }
     public void setSp(int decrease){
+        int currentsp;
+        currentsp = sp;
         sp = sp - decrease;
+        if(sp <= 0){
+            System.out.println("Don't have sp enough");
+            sp = currentsp;
+        }
+    }
+
+    public void attack(basicpoke enemy){
+        System.out.println(name + "attack" + enemy.getName());
+        enemy.setDamage(atk);
     }
     public void hitMonster(Bag bag){
         if(level == 1 && exp == 0){

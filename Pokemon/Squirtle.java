@@ -13,5 +13,6 @@ public class Squirtle extends basicpoke{
         level = 1;
         exp = 0;
         MaxHp = 44;
+        Maxsp = 10;
     }
 }

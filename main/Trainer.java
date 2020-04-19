@@ -52,7 +52,7 @@ public class Trainer{
         while(event == true){
             System.out.println("==========================");
             System.out.println("1 . STATUS");
-            System.out.println("2 . HIT MONSTER");
+            System.out.println("2 . Catch pokemon");
             System.out.println("3 . INVENTORY");
             System.out.println("4 . Go to pokemon center");
             System.out.println("5 . End game  or another");
@@ -62,9 +62,9 @@ public class Trainer{
             Enter = scanner.nextInt();
             //condition
             if(Enter == 1){
-                pokemonNo1.status(pokemon1);
+                status();
             }
-            else if(Enter == 2){
+            /*else if(Enter == 2){
                 pokemonNo1.hitMonster(bag);
             }
             else if(Enter == 3){
@@ -77,12 +77,91 @@ public class Trainer{
             }
             else if(Enter == 4){
                 pokemonNo1.regenHp(pokemonNo1.getMaxHp());//regen
-            }
+            }*/
             else{
                 event = false; //End game
             }
         }
     }
+    public void status(){
+        int i=1;
+        for(basicpoke p:pokemonbag){
+            System.out.print("No :" + i);
+            p.status();
+            i++;
+        }
+    }
+    public void catchpokemon(){
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<basicpoke> pokemons = new ArrayList<basicpoke>();
+        int pokemonran = (int)(Math.random()*5 + 1);
+        for(int i=0; i < pokemonran; i++){
+            int type = (int)(Math.random()*4);
+            if(type == 0){
+                pokemons.add(new Bulbasaur("Wild Bulbasaur"));
+            }
+            else if(type == 1){
+                pokemons.add(new Squirtle("Wild Squirtle"));
+            }
+            else if(type == 2){
+                pokemons.add(new Charmander("Wild Chamander"));
+            }
+            else if(type == 3){
+                pokemons.add(new Pikachu("Wild Pikachu"));    
+            }
+        }
+
+        System.out.println("Pokemon around you");
+        int no=1;
+        int sec;
+        for(basicpoke p : pokemons){
+            System.out.println("No. " + no + ":" + p.getName());
+            no++;
+        }
+
+        System.out.println("catch No.:");
+        no = scanner.nextInt();
+        basicpoke wildpokemon = pokemons.get(no-1);
+        
+        currentPokemon(pokemonbag);
+        System.out.println("Select your pokemon to fight");
+        sec = scanner.nextInt();
+        basicpoke myPokemon = pokemonbag.get(sec-1);
+
+        boolean isWin = false;
+        do{
+            myPokemon.attack(wildpokemon);
+            if(wildpokemon.getHp() == 0){
+                isWin = true;
+                break;
+            }
+            else{
+                wildpokemon.attack(myPokemon);
+                if(myPokemon.getHp() == 0){
+                    isWin = false;
+                    break;
+                }
+            }
+        }while(true);
+        if(isWin){
+            System.out.println("Catch complete");
+            pokemonbag.add(pokemons.get(sec));
+        }
+        else{
+            System.out.println(wildpokemon.getName() + "Win");
+        }
+    }
+    public void currentPokemon(ArrayList<basicpoke> Pokemono){
+        int i = 1;
+        for(basicpoke p : Pokemono){
+            System.out.print("No. " + i + p.getName() + "Hp : " + p.getHp());
+            i++;
+        }
+    }
+    //method สร้างทางเลือกแอ็คชั่น
+    /*public void actioncatchpokemon(){
+
+    }*/
 }
 
 //method ด้านล่างคือตัวเดินเกมและปรับแต่งตรงตัว pokemon ให้มาเราเป็น method ในนี้แทน

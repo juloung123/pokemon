@@ -13,5 +13,6 @@ public class Pikachu extends basicpoke{
         level = 1;
         exp = 0;
         MaxHp = 45;
+        Maxsp = 10;
     }
 }

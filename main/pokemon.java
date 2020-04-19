@@ -7,8 +7,8 @@ import bag.*;
 public class pokemon {
 
     public static void main(String[] args){
-        /*int Enter;
         String name;
+        /*int Enter;
         String pokemon1;
         boolean event = true;
         Bag bag = new Bag();*/
@@ -20,7 +20,7 @@ public class pokemon {
         System.out.println("Welcome to Pokemon World " + name);
         System.out.println("Let select your Starter Poke !!");
         System.out.printf("1.Bulbasaur\n2.Charmander\n3.Squirtle\n4.Pikachu\n>");
-        int selected = scanner.nextInt();*/
+        int selected = scanner.nextInt();
         if(selected == 1){
             basicpoke pokemonNo1 = new Bulbasaur();
             while(event == true){
@@ -164,7 +164,7 @@ public class pokemon {
                     event = false; //End game
                 }
             }
-        }
+        }*/
     }
 }
 

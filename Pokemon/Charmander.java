@@ -13,5 +13,6 @@ public class Charmander extends basicpoke{
         level = 1;
         exp = 0;
         MaxHp = 39;
+        Maxsp = 10;
     }
 }
