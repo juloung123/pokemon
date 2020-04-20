@@ -5,7 +5,8 @@ public class Bulbasaur extends basicpoke{
     public Bulbasaur(String name)
     {
         super(name);
-        Race = "Grass";
+        Race = "Bulbasaur";
+        type = "Grass";
         hp = 45;
         sp = 13;
         atk = 49;

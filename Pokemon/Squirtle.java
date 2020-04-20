@@ -4,7 +4,8 @@ import Basicpoke.basicpoke;
 public class Squirtle extends basicpoke{
     public Squirtle(String name){
         super(name);
-        Race = "Water";
+        Race = "Squirtle";
+        type = "Water";
         hp = 44;
         sp = 13;
         atk = 48;

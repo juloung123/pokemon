@@ -64,10 +64,10 @@ public class Trainer{
             if(Enter == 1){
                 status();
             }
-            /*else if(Enter == 2){
-                pokemonNo1.hitMonster(bag);
+            else if(Enter == 2){
+                catchpokemon();
             }
-            else if(Enter == 3){
+            /*else if(Enter == 3){
                 if(bag.empty() == true){
                     System.out.println("Your bag is empty");
                 }
@@ -84,10 +84,11 @@ public class Trainer{
         }
     }
     public void status(){
-        int i=1;
+        int i=0;
         for(basicpoke p:pokemonbag){
-            System.out.print("No :" + i);
+            System.out.println("==========================\nNo :" + i);
             p.status();
+            System.out.println("==========================");
             i++;
         }
     }
@@ -111,26 +112,45 @@ public class Trainer{
             }
         }
 
-        System.out.println("Pokemon around you");
-        int no=1;
-        int sec;
+        System.out.println("==========================\nPokemon around you");
+        int no=0;
+        int sec=0;
         for(basicpoke p : pokemons){
-            System.out.println("No. " + no + ":" + p.getName());
+            System.out.println("No." + no + ":" + p.getName());
             no++;
         }
-
-        System.out.println("catch No.:");
+        System.out.println("No.-1:Run out !");
+        System.out.println("==========================");
+        System.out.print("catch No :");
         no = scanner.nextInt();
-        basicpoke wildpokemon = pokemons.get(no-1);
-        
-        currentPokemon(pokemonbag);
+        basicpoke wildpokemon = pokemons.get(no);
+
         System.out.println("Select your pokemon to fight");
+        currentPokemon(pokemonbag);
+        System.out.print("No:");
         sec = scanner.nextInt();
-        basicpoke myPokemon = pokemonbag.get(sec-1);
+        basicpoke myPokemon = pokemonbag.get(sec);
 
         boolean isWin = false;
+
         do{
-            myPokemon.attack(wildpokemon);
+            System.out.println("What will " + name + " do ?");
+            System.out.println("No.1:fight");
+            System.out.println("No.2:bag");
+            System.out.println("No.3:Pokemon");
+            System.out.println("No.4:Run");
+            System.out.print("select : ");
+            no = scanner.nextInt();
+            if(no == 1){
+                isWin = fight(myPokemon, wildpokemon);
+                if(isWin == true){
+                    break;
+                }
+            }
+            else if(no == 4){
+                break;
+            }
+            /*myPokemon.attack(wildpokemon);
             if(wildpokemon.getHp() == 0){
                 isWin = true;
                 break;
@@ -141,7 +161,7 @@ public class Trainer{
                     isWin = false;
                     break;
                 }
-            }
+            }*/
         }while(true);
         if(isWin){
             System.out.println("Catch complete");
@@ -152,11 +172,21 @@ public class Trainer{
         }
     }
     public void currentPokemon(ArrayList<basicpoke> Pokemono){
-        int i = 1;
+        int i = 0;
         for(basicpoke p : Pokemono){
-            System.out.print("No. " + i + p.getName() + "Hp : " + p.getHp());
+            System.out.println("==========================\nNo." + i + ":"+ p.getName() + "\nHp : " + p.getHp() + "\n==========================");
             i++;
         }
+    }
+    public boolean fight(basicpoke firstattack,basicpoke secondattack){
+        firstattack.attack(secondattack);
+        if(secondattack.getHp() == 0){
+            return true;
+        }
+        else{
+            secondattack.attack(firstattack);
+        }
+        return false;
     }
     //method สร้างทางเลือกแอ็คชั่น
     /*public void actioncatchpokemon(){

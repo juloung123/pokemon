@@ -4,7 +4,8 @@ import Basicpoke.basicpoke;
 public class Pikachu extends basicpoke{
     public Pikachu(String name){
         super(name);
-        Race = "Electric";
+        Race = "Pikachu";
+        type = "Electric";
         hp = 45;
         sp = 13;
         atk = 80;

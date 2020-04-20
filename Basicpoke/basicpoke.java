@@ -4,6 +4,7 @@ import bag.*;
 
 public class basicpoke{
     public String name;
+    public String type;
     public int hp;
     public int sp;
     public int atk;
@@ -18,6 +19,7 @@ public class basicpoke{
     public basicpoke(String name){
         this.name = name;
         Race = "Nothing";
+        type =  "Nothing";
         hp = 1;
         sp = 1;
         atk = 1;
@@ -38,7 +40,8 @@ public class basicpoke{
 
     public void status(){
         System.out.println("Name :"+name);
-            System.out.println("Race :" + Race);
+            System.out.println("Race : " + Race);
+            System.out.println("type : " + type);
             System.out.println("Level :"+getLv());
             System.out.println("Exp :"+getExp());
             System.out.println("Hp :" + getHp() + "/" + getMaxHp());
@@ -84,10 +87,9 @@ public class basicpoke{
         System.out.println("Your pokemon HP and SP Will be Regen");
     }
     public void setDamage(int damage){
-        hp = hp-damage;
+        hp = hp-(damage-def);
         if(hp <= 0 ){
-            System.out.println("YOU Pokemon DIE !");
-            System.out.println("Please Go to pokemon center!!");
+            System.out.println("Pokemon " + name + " can't fight anymore");
             hp = 0;
         }
     }
@@ -102,7 +104,7 @@ public class basicpoke{
     }
 
     public void attack(basicpoke enemy){
-        System.out.println(name + "attack" + enemy.getName());
+        System.out.println(name + " attack " + enemy.getName());
         enemy.setDamage(atk);
     }
     public void hitMonster(Bag bag){

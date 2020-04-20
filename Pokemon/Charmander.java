@@ -4,7 +4,8 @@ import Basicpoke.basicpoke;
 public class Charmander extends basicpoke{
     public Charmander(String name){
         super(name);
-        Race = "Fire";
+        Race = "Charmander";
+        type = "Fire";
         hp = 39;
         sp = 11;
         atk = 52;
