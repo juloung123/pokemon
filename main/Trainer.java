@@ -75,16 +75,16 @@ public class Trainer{
                     bag.showitem();
                 }
             }
-            /*else if(Enter == 4){
-                pokemonNo1.regenHp(pokemonNo1.getMaxHp());//regen
-            }*/
+            else if(Enter == 4){
+                regen();//regen
+            }
             else{
                 event = false; //End game
             }
         }
     }
     public void status(){
-        int i=0;
+        int i=1;
         for(basicpoke p:pokemonbag){
             System.out.println("==========================\nNo :" + i);
             p.status();
@@ -171,10 +171,10 @@ public class Trainer{
             }while(true);
             if(isWin){
                 System.out.println("Catch complete");
-                pokemonbag.add(pokemons.get(sec));
+                pokemonbag.add(wildpokemon);
             }
             else{
-                System.out.println(wildpokemon.getName() + "Win");
+                System.out.println(wildpokemon.getName() + " Win");
             }
         }
     }
@@ -186,19 +186,70 @@ public class Trainer{
         }
     }
     public boolean fight(basicpoke firstattack,basicpoke secondattack){
+       
+        System.out.println("==========================\nselect action");
+        System.out.println("No.1 : Normal attack !");
+        System.out.println("No.2 : skill attack !");
+        System.out.println("==========================");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Select :");
+        int s = scanner.nextInt();
+        if(s == 1){
+            return normalattack(firstattack,secondattack);
+        }
+        //skill attack
+        else if(s == 2){
+            return skillattack(firstattack, secondattack);
+        }
+        else{
+            return false;
+        }
+    }
+    public void regen(){
+        for(basicpoke i : pokemonbag){
+            i.regenHp();
+        }
+    }
+    public boolean normalattack(basicpoke firstattack,basicpoke secondattack){
         firstattack.attack(secondattack);
         if(secondattack.getHp() == 0){
             return true;
         }
         else{
+            int ran;
+            ran = (int)(Math.random()* 10);
+            if(ran <= 8){
             secondattack.attack(firstattack);
+            }
+            else{
+                secondattack.skillattack(firstattack);
+            }
         }
         return false;
     }
-    //method สร้างทางเลือกแอ็คชั่น
-    /*public void actioncatchpokemon(){
-
-    }*/
+    public boolean skillattack(basicpoke firstattack,basicpoke secondattack){
+        if(firstattack.getSp() < 5){
+            System.out.println("Can't use skill you have Sp = " + firstattack.getSp());
+            return false;
+        }
+        else{
+            firstattack.skillattack(secondattack);
+            if(secondattack.getHp() == 0){
+                return true;
+            }
+            else{
+                int ran;
+                ran = (int)(Math.random()* 10);
+                if(ran <= 8){
+                secondattack.attack(firstattack);
+                }
+                else{
+                    secondattack.skillattack(firstattack);
+                }
+            }
+            return false;
+        }
+    }
 }
 
 //method ด้านล่างคือตัวเดินเกมและปรับแต่งตรงตัว pokemon ให้มาเราเป็น method ในนี้แทน

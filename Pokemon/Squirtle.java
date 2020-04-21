@@ -6,14 +6,14 @@ public class Squirtle extends basicpoke{
         super(name);
         Race = "Squirtle";
         type = "Water";
-        hp = 44;
-        sp = 13;
-        atk = 48;
-        def = 65;
-        skill = 52;
+        hp = ((int)(Math.random()* 9)) + 35;
+        sp = ((int)(Math.random()* 3)) + 10;
+        atk = ((int)(Math.random()* 13)) + 35;
+        def = ((int)(Math.random()* 15)) + 10;
+        skill = ((int)(Math.random()* 4)) + 48;
         level = 1;
         exp = 0;
-        MaxHp = 44;
-        Maxsp = 10;
+        MaxHp = hp;
+        Maxsp = sp;
     }
 }
