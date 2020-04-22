@@ -12,11 +12,11 @@ public class Bag{
     public Bag(){
         items = new ArrayList<Item>();
     }
-    public void addItem(){
-        items.add(new Item(0,"Pokeball",5));
-        items.add(new Item(1,"HpPotion",5));
-        items.add(new Item(2,"Berries",5));
-        items.add(new Item(3,"SpPotion",5));
+    public void addItem(int numball,int numhp,int numsp,int numbery){
+        items.add(new Item(0,"Pokeball",numball));
+        items.add(new Item(1,"HpPotion",numhp));
+        items.add(new Item(2,"Berries",numbery));
+        items.add(new Item(3,"SpPotion",numsp));
     }
     public void Ball(){
         Item a0 = new Pokeball(0,"Pokeball",1);

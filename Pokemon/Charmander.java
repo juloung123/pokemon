@@ -1,6 +1,4 @@
 package Pokemon;
-import java.net.Socket;
-
 import Basicpoke.basicpoke;
 
 public class Charmander extends basicpoke{

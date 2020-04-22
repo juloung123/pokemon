@@ -65,7 +65,9 @@ public class Trainer{
                 status();
             }
             else if(Enter == 2){
+                if(cheackhavereadypoke(pokemonbag) == true){
                 catchpokemon();
+                }
             }
             else if(Enter == 3){
                 if(bag.empty() == true){
@@ -115,6 +117,7 @@ public class Trainer{
         System.out.println("==========================\nPokemon around you");
         int no=1;
         int sec;
+        basicpoke myPokemon;
         for(basicpoke p : pokemons){
             System.out.println("No." + no + ":" + p.getName() + " = " + p.getHp());
             no++;
@@ -128,9 +131,17 @@ public class Trainer{
 
             System.out.println("Select your pokemon to fight");
             currentPokemon(pokemonbag);
+            do{
             System.out.print("No:");
             sec = scanner.nextInt();
-            basicpoke myPokemon = pokemonbag.get(sec-1);
+            myPokemon = pokemonbag.get(sec-1);
+            if(myPokemon.getHp() > 0){
+                break;
+            }
+            else{
+                System.out.println("your pokemon not ready to fight");
+            }
+            }while(true);
 
             boolean isWin = false;
 
@@ -144,6 +155,25 @@ public class Trainer{
                 no = scanner.nextInt();
                 if(no == 1){
                     isWin = fight(myPokemon, wildpokemon);
+                    if(myPokemon.getHp() == 0 && isWin == false){
+                        System.out.println("Your pokemon can't fight anymore select new pokemon");
+                        if(cheackhavereadypoke(pokemonbag) == true){
+                            currentPokemon(pokemonbag);
+                            do{
+                            sec = scanner.nextInt();
+                            myPokemon = pokemonbag.get(sec-1);
+                            if(myPokemon.getHp()>0){
+                                break;
+                            }
+                            else{
+                                System.out.println("your pokemon not ready to fight");
+                            }
+                            }while(true);
+                        }
+                        else{
+                            break;
+                        }
+                    }
                     if(isWin == true){
                         break;
                     }
@@ -184,6 +214,14 @@ public class Trainer{
             System.out.println("==========================\nNo." + i + ":"+ p.getName() + "\nHp : " + p.getHp() + "\n==========================");
             i++;
         }
+    }
+    public boolean cheackhavereadypoke(ArrayList<basicpoke> pokemon){
+        for(basicpoke i : pokemonbag){
+            if(i.getHp() != 0){
+                return true;
+            }
+        }
+        return false;
     }
     public boolean fight(basicpoke firstattack,basicpoke secondattack){
        

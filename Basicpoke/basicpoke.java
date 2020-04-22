@@ -111,35 +111,36 @@ public class basicpoke{
     }
     public void skillattack(basicpoke enemy){
         sp -= 5;
-        System.out.println(name + " use skill to" + enemy.getName());
+        System.out.println(name + " use skill to " + enemy.getName());
         enemy.setDamage(skill);
 
     }
     public void hitMonster(Bag bag){
-        if(level == 1 && exp == 0){
-            bag.addItem();
-            System.out.println("Congratulations you get  5 of hp Potion 5 of Sp Potion 5 Pokeball and 5 Berries");
-        }
-        setExp(150);
-        setDamage(50);
-        setSp(10);
+        setExp(100);
         setLv(exp);
-
         Random rand = new Random();
-        int value = rand.nextInt(5);  // Can get Red Potion if random is 0 and Blue Potion is 1 another don't get anything
-        if (value == 0){
+        int value = rand.nextInt(10000);  // Can get Red Potion if random is 0 and Blue Potion is 1 another don't get anything
+        if (value <= 1580){
             bag.hppo();
-            System.out.println("You get Red Potion 1");
+            System.out.println("You get 1 Red Potion");
         }
-        else if(value == 1){
+        if(value <= 979){
             bag.sppo();
-            System.out.println("You get Blue Potion 1");
+            System.out.println("You get 1 Blue Potion");
+        }
+        if(value <= 6466){
+            bag.Ball();
+            System.out.println("You get 1 Pokeball");
+        }
+        if(value <= 1432){
+            bag.berry();
+            System.out.println("You get 1 Berry");
         }
     }
     public void changeHpAndSp(){
-        this.hp = 100 *level;
+        this.hp = 50 *level;
         this.MaxHp = hp;
-        this.sp = hp;
+        this.Maxsp = hp;
     }
     public void setLv(int exp){
         int levelUp;
@@ -147,8 +148,26 @@ public class basicpoke{
         if(exp >= levelUp){
             this.exp = exp - levelUp;
             level = level + 1;
-            System.out.println("Congratulations !! You level up");
+            //rewardsfromlevel(level);
+            System.out.println("Congratulations !!" + name +"level up");
             changeHpAndSp();
         }
     }
+    /*public void rewardsfromlevel(int currentlevel){
+        if(currentlevel == 2){
+            bag.addItem(2,0,0,0);
+        }
+        else if(currentlevel == 3 || currentlevel == 4){
+            bag.addItem(3,0,0,0);
+        }
+        else if(currentlevel == 5){
+            bag.addItem(4,2,0,1);
+        }
+        else if(currentlevel == 6){
+            bag.addItem(5,2,0,1);
+        }
+        else{
+            bag.addItem(5,3,1,2);
+        }
+    }*/
 }
