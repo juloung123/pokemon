@@ -4,15 +4,14 @@ public class Item{
     public int itemId;
     public String name;
     String detail;
-    public int amount;
 
-    public Item(int itemId,String itemName,int amountItemFound) {
+
+    public Item(int itemId,String itemName) {
         this.itemId = itemId;
         this.name = itemName;
-        this.amount=amountItemFound ;
     }
-    public int getAmount(){
-        return amount;
+    public int getID(){
+        return itemId;
     }
     public String getName(){
         return name;

@@ -1,10 +1,10 @@
 package Item;
 
 public class HpPotion extends Item{
-        public HpPotion(int id,String HpPotion,int amount){
-            super(id,HpPotion,amount);
+        public HpPotion(int id,String HpPotion){
+            super(id,HpPotion);
         }
         public void print(){
-            System.out.println("use to regen Hp pokeman"+getAmount());
+            System.out.println("use to regen Hp pokeman");
         }
 }
