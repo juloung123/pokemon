@@ -1,9 +1,9 @@
 package Item;
 
 public class Item{
-    public int itemId;
-    public String name;
-    String detail;
+    protected int itemId;
+    protected String name;
+    protected String detail;
 
 
     public Item(int itemId,String itemName) {

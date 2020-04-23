@@ -9,7 +9,7 @@ import Berry.*;
 import sppotion.*;*/
 
 public class Bag{
-    public ArrayList<Item> items;
+    private ArrayList<Item> items;
 
     public Bag(){
         items = new ArrayList<Item>();

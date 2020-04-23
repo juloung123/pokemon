@@ -3,18 +3,18 @@ import java.util.*;
 import bag.*;
 
 public class basicpoke{
-    public String name;
-    public String type;
-    public int hp;
-    public int sp;
-    public int atk;
-    public int def;
-    public int skill;
-    public int level;
-    public int exp;
-    public String Race;
-    public int MaxHp;
-    public int Maxsp;
+    protected String name;
+    protected String type;
+    protected int hp;
+    protected int sp;
+    protected int atk;
+    protected int def;
+    protected int skill;
+    protected int level;
+    protected int exp;
+    protected String Race;
+    protected int MaxHp;
+    protected int Maxsp;
 
     public basicpoke(String name){
         this.name = name;

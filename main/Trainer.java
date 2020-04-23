@@ -7,8 +7,8 @@ import bag.*;
 public class Trainer{
     private String name;
     private ArrayList<basicpoke> pokemonbag;
-    public boolean event;
-    public Bag bag;
+    private boolean event;
+    private Bag bag;
 
     public Trainer(String name){
         pokemonbag = new ArrayList<basicpoke>();
