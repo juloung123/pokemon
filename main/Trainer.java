@@ -78,7 +78,7 @@ public class Trainer{
                     System.out.println("No.-1 : to go back");
                     System.out.print("No:");
                     int select = scanner.nextInt();
-                    useitem(select);
+                    useitem(select,false,pokemonbag.get(0));
                 }
             }
             else if(Enter == 4){
@@ -98,7 +98,16 @@ public class Trainer{
             i++;
         }
     }
-    public void useitem(int select){
+    public boolean useitem(int select,boolean pokeball,basicpoke pokemonsolo){
+        if(select == 1 && pokeball == true){
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("You want to use pokeball ?");
+            System.out.print("YES press 1 or No press 2 : ");
+            int sec = scanner.nextInt();
+            if(sec == 1){
+                return bag.useball(pokemonsolo);
+            }
+        }
         if(select == 1){
             System.out.println("this Item use to catch pokemon");
         }
@@ -134,6 +143,7 @@ public class Trainer{
             mypokemon = pokemonbag.get(sec-1);
             bag.usesppo(mypokemon,bag);
         }
+        return false;
     }
     public void catchpokemon(){
         Scanner scanner = new Scanner(System.in);
@@ -228,29 +238,31 @@ public class Trainer{
                         System.out.println("No.-1 : to go back");
                         System.out.print("No:");
                         int select = scanner.nextInt();
-                        useitem(select);
+                        boolean a = useitem(select,true,wildpokemon);
+                        if(a == true){
+                            isWin = true;
+                            break;
+                        }
                     }
                 }
                 else if(no == 3){
+                    System.out.println("Select your pokemon to fight");
                     currentPokemon(pokemonbag);
+                    do{
+                    System.out.print("No:");
                     sec = scanner.nextInt();
                     myPokemon = pokemonbag.get(sec-1);
+                    if(myPokemon.getHp() > 0){
+                        break;
+                    }
+                    else{
+                        System.out.println("your pokemon not ready to fight");
+                    }   
+                    }while(true);
                 }
                 else if(no == 4){
                     break;
                 }
-            /*myPokemon.attack(wildpokemon);
-            if(wildpokemon.getHp() == 0){
-                isWin = true;
-                break;
-            }
-            else{
-                wildpokemon.attack(myPokemon);
-                if(myPokemon.getHp() == 0){
-                    isWin = false;
-                    break;
-                }
-            }*/
             }while(true);
             if(isWin){
                 myPokemon.afterfight(bag);

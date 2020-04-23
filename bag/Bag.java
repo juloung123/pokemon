@@ -44,13 +44,55 @@ public class Bag{
         Item a3 = new SpPotion(3,"SpPotion");
         items.add(a3);
     }
-    public void useball(){
+    public boolean useball(basicpoke pokemons){
         for(Item i : items){
             if(i.getID() == 0){
                 items.remove(i);
+                int pokemonran = (int)(Math.random()*10000);
+                if(pokemons.getHp() >= (pokemons.getMaxHp()*0.8) && pokemons.getHp() <= pokemons.getMaxHp()){
+                    if(pokemonran < 2000){
+                        System.out.println("Catch with pokeball complete");
+                        return true;
+                    }
+                    else{
+                        System.out.println("Failed to catch");
+                        return false;
+                    }
+                }
+                else if(pokemons.getHp() >= (pokemons.getMaxHp()*0.6) && pokemons.getHp() < (pokemons.getMaxHp()*0.8)){
+                    if(pokemonran < 4000){
+                        System.out.println("Catch with pokeball complete");
+                        return true;
+                    }
+                    else{
+                        System.out.println("Failed to catch");
+                        return false;
+                    }
+                }
+                else if(pokemons.getHp() >= (pokemons.getMaxHp()*0.4) && pokemons.getHp() < (pokemons.getMaxHp()*0.6)){
+                    if(pokemonran < 6000){
+                        System.out.println("Catch with pokeball complete");
+                        return true;
+                    }
+                    else{
+                        System.out.println("Failed to catch");
+                        return false;
+                    }
+                }
+                else if(pokemons.getHp() >= (pokemons.getMaxHp()*0.2) && pokemons.getHp() < (pokemons.getMaxHp()*0.4)){
+                    if(pokemonran < 6000){
+                        System.out.println("Catch with pokeball complete");
+                        return true;
+                    }
+                    else{
+                        System.out.println("Failed to catch");
+                        return false;
+                    }
+                }  
                 break;
             }
         }
+        return false;
     }
     public void usehppo(basicpoke thepokemon,Bag bag){
         for(Item i : items){
