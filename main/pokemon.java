@@ -14,8 +14,9 @@ public class pokemon {
         Trainer rungame = new Trainer(name);*/
         nameground Settingname = new nameground(true);
         Trainer rungame = new Trainer(Settingname.getName());
-        rungame.play();
-        maingame mg = new maingame(rungame);
+        
+        //rungame.play();
+        //maingame mg = new maingame(rungame);
 
     }
 }

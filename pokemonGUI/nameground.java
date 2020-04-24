@@ -3,11 +3,13 @@ package pokemonGUI;
 import javax.swing.*;
 import javax.swing.JFrame;
 import java.awt.event.*;
+import java.awt.*;
 
 public class nameground extends JFrame implements ActionListener{
     private JTextField name;
     private JFrame f;
     public nameground(boolean select){//ถ้าเป็น true เลือกใส่มนุษย์ false เลือกใส่ โปเกม่อน
+        Container c = getContentPane();
         f = new JFrame("Name");
         JLabel detail = new JLabel("Enter your name");
         JLabel detail1 = new JLabel("Enter your pokemon name");
@@ -32,6 +34,7 @@ public class nameground extends JFrame implements ActionListener{
     }
     public void actionPerformed(ActionEvent e){
         f.setVisible(false);
+        select test = new select();
     }
     public String getName(){
         return name.getText();
