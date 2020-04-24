@@ -7,12 +7,12 @@ import java.awt.event.*;
 
 public class maingame extends JFrame{
     private Trainer trainer;
+    private nameground Settingname;
     public maingame(Trainer trainer){
         super("Pokemon red chinese");
         this.trainer = trainer;
         Container c = getContentPane();
-        JLabel trainerName = new JLabel(trainer.getname());
-        c.add(trainerName);
+        c.add(Settingname);
         setSize(1280,1024);
         setVisible(true);
     }
