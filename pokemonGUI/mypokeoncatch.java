@@ -11,22 +11,26 @@ import java.awt.*;
 public class mypokeoncatch extends JFrame{
     private JFrame j;
 
-    public mypokeoncatch(Trainer trainer,basicpoke p){
+    public mypokeoncatch(Trainer trainer,basicpoke wildpokemon){
         j = new JFrame("My pokemon");
+        int y = 20;
+        int i=1;
         for(basicpoke w : trainer.getpokebag()){
-            int y = 20;
-            int i=1;
+            ImageIcon img = new ImageIcon("C:/Users/BlazeR/Desktop/pokemon/pokemonGUI/pokemonpic/background.png");
+            JLabel background = new JLabel("",img,JLabel.CENTER);
+            background.setBounds(0,0,1280,720);
             JLabel a = new JLabel("No." + i + " " + w.getName() + " = " + w.getHp());
             JButton b = new JButton("Select");
-            b.setBounds(150,y+10,100,20);
+            b.setBounds(200,y+10,100,20);
             b.addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent e){
                     if(w.getHp() > 0 ){
-                        action T8 = new action();
+                        action T8 = new action(trainer,w,wildpokemon);
+                        j.setVisible(false);
                     }
                 }
             });
-            a.setBounds(30,y,100,40);
+            a.setBounds(30,y,200,40);
             j.add(b);
             j.add(a);
             i++;

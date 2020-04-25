@@ -90,7 +90,7 @@ public class basicpoke{
     public void regenHp(){
         hp = MaxHp;
         sp = Maxsp;
-        System.out.println(name + " pokemon HP and SP Will be Regen");
+        //System.out.println(name + " pokemon HP and SP Will be Regen");
     }
     public void setDamage(int damage){
         int damagecal = damage-def;

@@ -28,6 +28,9 @@ public class Bag{
             items.add(new SpPotion(3,"SpPotion"));
         }
     }
+    public ArrayList<Item> getitem(){
+        return items;
+    }
     public void Ball(){
         Item a0 = new Pokeball(0,"Pokeball");
         items.add(a0);

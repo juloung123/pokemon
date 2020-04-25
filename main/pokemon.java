@@ -14,7 +14,7 @@ public class pokemon {
         rungame.play();*/
         nameground Settingname = new nameground();
     
-
+        
     }
 }
 

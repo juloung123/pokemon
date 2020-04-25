@@ -13,8 +13,8 @@ public class mypokemon extends JFrame{
 
     public mypokemon(Trainer trainer){
         j = new JFrame("My pokemon");
+        int y = 20;
         for(basicpoke p : trainer.getpokebag()){
-            int y = 20;
             int i=1;
             JLabel a = new JLabel("No." + i + " " + p.getName());
             JButton b = new JButton("Select");
@@ -22,6 +22,7 @@ public class mypokemon extends JFrame{
             b.addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent e){
                     infopoke T6 = new infopoke(p);
+                    j.setVisible(false);
                 }
             });
             a.setBounds(30,y,100,40);
