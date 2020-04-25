@@ -12,6 +12,7 @@ public class maingame extends JFrame{
         super("Pokemon red chinese");
         this.trainer = trainer;
         Container c = getContentPane();
+        
         c.add(poke);
         setSize(1280,1024);
         setVisible(true);

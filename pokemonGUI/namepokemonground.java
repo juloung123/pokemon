@@ -8,24 +8,24 @@ import main.Trainer;
 import java.awt.event.*;
 import java.awt.*;
 
-public class nameground extends JFrame {
+public class namepokemonground extends JFrame{
     private JTextField name;
     private JFrame f;
-    public nameground(){
+    public namepokemonground(Trainer trainer,int sec){
         
         f = new JFrame("Name");
-        JLabel detail = new JLabel("Enter your name");
+        JLabel detail1 = new JLabel("Enter your pokemon name");
         JButton b = new JButton("Let's Go");
         name = new JTextField();
-        detail.setBounds(150,90,100,30);
+        detail1.setBounds(120,90,150,30);
         name.setBounds(100,130,200,30);
         b.setBounds(150,180,100,30);
-        f.add(detail);
+        f.add(detail1);
         b.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 f.setVisible(false);
-                Trainer trainer = new Trainer(name.getText());
-                select test = new select(trainer);
+                trainer.firstselect(sec,name.getText());
+                Lobby T3 = new Lobby(trainer);
             }
         });
         f.add(b);

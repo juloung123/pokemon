@@ -37,7 +37,9 @@ public class basicpoke{
     public String toString(){
         return name;
     }
-
+    public void changename(String name){
+        this.name = name;
+    }
     public void status(){
         System.out.println("Name : "+name);
             System.out.println("Race : " + Race);
@@ -48,6 +50,12 @@ public class basicpoke{
             System.out.println("SP : "+ getSp() + "/" + getMaxSp());
             System.out.println("Defence : " + getdef());
             System.out.println("Attack Damage : " + getAttackDamage() + "\nSkill Damage : "+ getMagicDamage());
+    }
+    public String getRace(){
+        return Race;
+    }
+    public String gettype(){
+        return type;
     }
     public double getAttackDamage(){
         return atk;

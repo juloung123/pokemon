@@ -3,30 +3,40 @@ import java.util.*;
 import Pokemon.*;
 import Basicpoke.*;
 import bag.*;
+import pokemonGUI.*;
 
 public class Trainer{
     private String name;
     private ArrayList<basicpoke> pokemonbag;
     private boolean event;
     private Bag bag;
+    private nameground Settingname,pokemonname;
 
     public Trainer(String name){
         pokemonbag = new ArrayList<basicpoke>();
         event = true;
         bag = new Bag();
         this.name = name;
+        //Settingname = new nameground();
+        //this.name = Settingname.getName();
     }
 
     public String getname(){
         return name;
     }
 
+    public ArrayList<basicpoke> getpokebag(){
+        return pokemonbag;
+    }
+    public Bag getbag(){
+        return bag;
+    }
     public String toString(){
         return name;
     }
 
     public void firstselect(int firstpokemon,String name){
-        if(firstpokemon == 1){
+        if(firstpokemon == 4){
             pokemonbag.add(new Bulbasaur(name));
         }
         else if(firstpokemon == 2){
@@ -35,7 +45,7 @@ public class Trainer{
         else if(firstpokemon == 3){
             pokemonbag.add(new Squirtle(name));
         }
-        else if(firstpokemon == 4){
+        else if(firstpokemon == 1){
             pokemonbag.add(new Pikachu(name)); 
         }
     }
