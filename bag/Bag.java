@@ -83,7 +83,7 @@ public class Bag{
                     }
                 }
                 else if(pokemons.getHp() >= (pokemons.getMaxHp()*0.2) && pokemons.getHp() < (pokemons.getMaxHp()*0.4)){
-                    if(pokemonran < 6000){
+                    if(pokemonran < 8000){
                         System.out.println("Catch with pokeball complete");
                         return true;
                     }
@@ -92,6 +92,14 @@ public class Bag{
                         return false;
                     }
                 }  
+                else if(pokemons.getHp() == 0){
+                    return true;
+                }
+                else{
+                    if(pokemonran < 9000){
+                        return true;
+                    }
+                }
                 break;
             }
         }
@@ -99,7 +107,7 @@ public class Bag{
     }
     public void usehppo(basicpoke thepokemon,Bag bag){
         for(Item i : items){
-            if(i.getID() == 1){
+            if(i.getID() == 1){    
                 thepokemon.useallitem(1,50,bag);
                 items.remove(i);
                 break;
@@ -150,5 +158,13 @@ public class Bag{
     }
     public boolean empty(){
         return items.isEmpty();
+    }
+    public boolean checkbag(int item){
+        for(Item number : items){
+            if(number.getID() == item){
+                return true;
+            }
+        }
+        return false;
     }
 }

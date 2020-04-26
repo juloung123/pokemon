@@ -19,7 +19,7 @@ public class mypokeoncatch extends JFrame{
             ImageIcon img = new ImageIcon("C:/Users/BlazeR/Desktop/pokemon/pokemonGUI/pokemonpic/background.png");
             JLabel background = new JLabel("",img,JLabel.CENTER);
             background.setBounds(0,0,1280,720);
-            JLabel a = new JLabel("No." + i + " " + w.getName() + " = " + w.getHp());
+            JLabel a = new JLabel("No." + i + " " + w.getName() + " = " + w.getHp() + "/" + w.getMaxHp());
             JButton b = new JButton("Select");
             b.setBounds(200,y+10,100,20);
             b.addActionListener(new ActionListener(){

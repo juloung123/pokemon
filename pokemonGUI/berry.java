@@ -2,26 +2,37 @@ package pokemonGUI;
 
 import javax.swing.*;
 import javax.swing.JFrame;
-import Basicpoke.*;
-import main.Trainer;
-
 import java.awt.event.*;
 import java.awt.*;
+import Item.*;
+import Basicpoke.*;
+import main.Trainer;
+import Pokemon.*;
+import bag.*;
+import pokemonGUI.*;
+import java.util.*;
 
-public class mypokemon extends JFrame{
+public class berry extends JFrame{
     private JFrame j;
 
-    public mypokemon(Trainer trainer){
+    public berry(Trainer trainer){
         j = new JFrame("My pokemon");
         int y = 20;
         int i=1;
         for(basicpoke p : trainer.getpokebag()){
-            JLabel a = new JLabel("No." + i + " " + p.getName());
+            JLabel a = new JLabel("No." + i + " " + p.getName() + " = " + p.getHp() + "/" + p.getMaxHp());
             JButton b = new JButton("Select");
             b.setBounds(200,y+10,100,20);
             b.addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent e){
-                    infopoke T6 = new infopoke(p);
+                    trainer.getbag().useberry(p,trainer.getbag());
+                    JFrame k = new JFrame();
+                    JLabel text = new JLabel(p.getName() + " Get 1 Berry"); 
+                    text.setBounds(10,10,200,40);
+                    k.add(text);
+                    k.setSize(220,100);
+                    k.setLayout(null);
+                    k.setVisible(true);
                     j.setVisible(false);
                 }
             });

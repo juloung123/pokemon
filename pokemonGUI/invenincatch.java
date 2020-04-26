@@ -12,12 +12,13 @@ import bag.*;
 import pokemonGUI.*;
 import java.util.*;
 
-public class Inventory extends JFrame{
+public class invenincatch extends JFrame{
     private JFrame j;
-    public Inventory(Trainer trainer,Bag bag){
+    public invenincatch(Trainer trainer,basicpoke mypokemon,basicpoke wildpokemon){
         j = new JFrame("My Inventory");
-        if(bag.empty() == true){
+        if(trainer.getbag().empty() == true){
                 JLabel text = new JLabel("Your Item is Empty"); 
+                action T1 = new action(trainer,mypokemon,wildpokemon);
                 text.setBounds(10,10,200,40);
                 j.add(text);
                 j.setSize(220,100);
@@ -29,7 +30,7 @@ public class Inventory extends JFrame{
             int hp=0;
             int berry=0;
             int sp=0;
-            for(Item r : bag.getitem()){
+            for(Item r : trainer.getbag().getitem()){
                 if(r.getID() == 0){
                     ++ball;
                 }
@@ -52,6 +53,8 @@ public class Inventory extends JFrame{
             JButton Buthp = new JButton("Select");
             JButton Butberry = new JButton("Select");
             JButton Butsp = new JButton("Select");
+            JButton back = new JButton("Go back");
+            back.setBounds(100,320,100,40);
             topic.setBounds(100,20,200,40);
             textball.setBounds(20,80,250,40);
             texthp.setBounds(20,140,250,40);
@@ -61,41 +64,55 @@ public class Inventory extends JFrame{
             Buthp.setBounds(150,140,100,40);
             Butberry.setBounds(150,200,100,40);
             Butsp.setBounds(150,260,100,40);
-            Butball.addActionListener(new ActionListener(){
-                public void actionPerformed(ActionEvent e){
-                        JFrame k = new JFrame();
-                        JLabel text = new JLabel("use to catch pokemon"); 
-                        text.setBounds(10,10,200,40);
-                        k.add(text);
-                        k.setSize(220,100);
-                        k.setLayout(null);
-                        k.setVisible(true);
-                }
-            });
-            if(bag.checkbag(1) == true){
+            if(trainer.getbag().checkbag(0) == true){
+                Butball.addActionListener(new ActionListener(){
+                    public void actionPerformed(ActionEvent e){
+                            boolean p = trainer.getbag().useball(wildpokemon);
+                            if(p == true){
+                                trainer.getpokebag().add(wildpokemon);
+                            }
+                            else{
+                                action T1 = new action(trainer,mypokemon,wildpokemon);
+                            }
+                            j.setVisible(false);
+                    }
+                });
+            }
+            if(trainer.getbag().checkbag(1) == true){
                 Buthp.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent e){
                         Hppotion T1 = new Hppotion(trainer);
                         j.setVisible(false);
+                        action T2 = new action(trainer,mypokemon,wildpokemon);
                     }
                 });
             }
-            if(bag.checkbag(2) == true){
+            if(trainer.getbag().checkbag(2) == true){
                 Butberry.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent e){
                         berry T1 = new berry(trainer);
                         j.setVisible(false);
+                        action T3 = new action(trainer,mypokemon,wildpokemon);
                     }
                 });
             }
-            if(bag.checkbag(3) == true){
+            if(trainer.getbag().checkbag(3) == true){
                 Butsp.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent e){
                         sppotion T1 = new sppotion(trainer);
                         j.setVisible(false);
+                        action T4 = new action(trainer,mypokemon,wildpokemon);
                     }
                 });
             }
+            back.addActionListener(new ActionListener(){
+                public void actionPerformed(ActionEvent e){
+                    action T1 = new action(trainer,mypokemon,wildpokemon);
+                    j.setVisible(false);
+
+                }
+            });
+            j.add(back);
             j.add(topic);
             j.add(textball);
             j.add(texthp);

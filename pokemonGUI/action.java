@@ -27,16 +27,19 @@ public class action extends JFrame{
         JButton run1 = new JButton("Run");
         
         JLabel background = new JLabel("",img,JLabel.CENTER);
-        fight1.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e){
-                f.setVisible(false);
-                fight T1 = new fight(trainer,mypokemon,wildpokemon);
+        if(wildpokemon.getHp() != 0){
+            fight1.addActionListener(new ActionListener(){
+                public void actionPerformed(ActionEvent e){
+                    f.setVisible(false);
+                    fight T1 = new fight(trainer,mypokemon,wildpokemon);
                 
-            }
-        }); 
+                }
+            }); 
+        }
         mybag1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                Inventory T2 = new Inventory(trainer,trainer.getbag());
+                invenincatch T2 = new invenincatch(trainer,mypokemon,wildpokemon);
+                f.setVisible(false);
             }
         });
         mypo1.addActionListener(new ActionListener(){

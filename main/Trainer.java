@@ -17,6 +17,8 @@ public class Trainer{
         event = true;
         bag = new Bag();
         this.name = name;
+        bag.addItem(5,0,1,0);
+
         //Settingname = new nameground();
         //this.name = Settingname.getName();
     }

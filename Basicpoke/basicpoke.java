@@ -152,7 +152,7 @@ public class basicpoke{
             bag.hppo();
             System.out.println("You get 1 Red Potion");
         }
-        if(value2 <= 979){
+        if(value2 <= 1580){
             bag.sppo();
             System.out.println("You get 1 Blue Potion");
         }

@@ -40,15 +40,15 @@ public class fight extends JFrame{
                     isWin = true;
                     JFrame youwin = new JFrame();
                     Font font1 = new Font("Courier", Font.BOLD,24);
-                    JLabel win = new JLabel("Catch complete!");
+                    JLabel win = new JLabel("enemy can't fight anymore");
                     mypokemon.afterfight(trainer.getbag());
-                    trainer.getpokebag().add(wildpokemon);
-                    win.setBounds(0,0,200,100);
+                    win.setBounds(0,0,400,100);
                     youwin.add(win);
                     win.setFont(font1);
                     youwin.setLayout(null);
                     youwin.setSize(400,300);
                     youwin.setVisible(true);
+                    action T10 = new action(trainer,mypokemon,wildpokemon);
                 }
                 else{
                     action T2 = new action(trainer,mypokemon,wildpokemon);
@@ -81,15 +81,15 @@ public class fight extends JFrame{
                         isWin = true;
                         JFrame youwin = new JFrame();
                         Font font1 = new Font("Courier", Font.BOLD,24);
-                        JLabel win = new JLabel("Catch complete!");
+                        JLabel win = new JLabel("enemy can't fight anymore");
                         mypokemon.afterfight(trainer.getbag());
-                        trainer.getpokebag().add(wildpokemon);
-                        win.setBounds(0,0,200,100);
+                        win.setBounds(0,0,400,100);
                         youwin.add(win);
                         win.setFont(font1);
                         youwin.setLayout(null);
                         youwin.setSize(400,300);
                         youwin.setVisible(true);
+                        action T10 = new action(trainer,mypokemon,wildpokemon);
                     }
                     else{
                         action T2 = new action(trainer,mypokemon,wildpokemon);
