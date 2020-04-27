@@ -12,7 +12,7 @@ public class namepokemonground extends JFrame{
     private JTextField name;
     private JFrame f;
     public namepokemonground(Trainer trainer,int sec){
-        
+        try{
         f = new JFrame("Name");
         JLabel detail1 = new JLabel("Enter your pokemon name");
         JButton b = new JButton("Let's Go");
@@ -28,13 +28,14 @@ public class namepokemonground extends JFrame{
                 Lobby T3 = new Lobby(trainer);
             }
         });
+        f.setLocation(600, 300);
         f.add(b);
         f.add(name);
         f.setSize(400,400);
         f.setLayout(null);
         f.setVisible(true);
-    }
-    public String getName(){
-        return name.getText();
+        }catch(Exception e){
+            System.out.println("Something wrong in namepokemonground class");
+        }
     }
 }

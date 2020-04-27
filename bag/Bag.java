@@ -12,6 +12,7 @@ public class Bag{
     private ArrayList<Item> items;
 
     public Bag(){
+        
         items = new ArrayList<Item>();
     }
     public void addItem(int pokeball,int hppo,int berry,int sppo){

@@ -11,7 +11,7 @@ public class Trainer{
     private boolean event;
     private Bag bag;
     private nameground Settingname,pokemonname;
-
+  
     public Trainer(String name){
         pokemonbag = new ArrayList<basicpoke>();
         event = true;
@@ -22,7 +22,7 @@ public class Trainer{
         //Settingname = new nameground();
         //this.name = Settingname.getName();
     }
-
+    
     public String getname(){
         return name;
     }
@@ -366,6 +366,7 @@ public class Trainer{
             return false;
         }
     }
+
 }
 
 //method ด้านล่างคือตัวเดินเกมและปรับแต่งตรงตัว pokemon ให้มาเราเป็น method ในนี้แทน

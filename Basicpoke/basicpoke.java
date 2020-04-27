@@ -2,7 +2,7 @@ package Basicpoke;
 import java.util.*;
 import bag.*;
 
-public class basicpoke{
+public class basicpoke implements basicinter{
     protected String name;
     protected String type;
     protected int hp;
