@@ -7,10 +7,6 @@ import java.awt.*;
 
 import Basicpoke.*;
 import main.Trainer;
-import Pokemon.*;
-import bag.*;
-import pokemonGUI.*;
-import java.util.*;
 
 public class action extends JFrame{
     private JFrame f;
@@ -67,11 +63,11 @@ public class action extends JFrame{
             JButton mypo1 = new JButton("Pokemon");
             JButton run1 = new JButton("Run");
             JLabel background;
-            JLabel myLv = new JLabel("Lv" + mypokemon.getLv()); //******************************************* */
+            JLabel myLv = new JLabel("Lv" + mypokemon.getLv()); 
             JLabel wildLv = new JLabel("Lv" + wildpokemon.getLv());
             JLabel myname = new JLabel(mypokemon.getName());
             JLabel wildname = new JLabel(wildpokemon.getName());
-            JLabel myHp = new JLabel(mypokemon.getHp() + "/" + mypokemon.getMaxHp()); //**************************************** */
+            JLabel myHp = new JLabel(mypokemon.getHp() + "/" + mypokemon.getMaxHp()); 
             if(mypokemon.getRace() == "Bulbasaur" && wildpokemon.getRace() == "Bulbasaur"){
                 background = new JLabel("",imgBulvsBul,JLabel.CENTER);
             } 
@@ -149,16 +145,6 @@ public class action extends JFrame{
                         Lobby T1 = new Lobby(trainer);
                     }
                 });
-            
-            /*layeredPane.setPreferredSize(new Dimension(1280, 720));
-            layeredPane.add(background, new Integer(100));
-            layeredPane.add(myLv, new Integer(200));
-            layeredPane.add(wildLv, new Integer(200));
-            layeredPane.add(myHp, new Integer(200));
-            layeredPane.add(myname, new Integer(200));
-            f.add(layeredPane); */
-            
-        
             fight1.setFont(font1);
             mybag1.setFont(font1);
             mypo1.setFont(font1);
@@ -173,11 +159,11 @@ public class action extends JFrame{
             topic1.setBounds(20,800,800,100);
             topic.setBounds(20,725,800,100);
             background.setBounds(0,0,1280,720);
-            myLv.setBounds(1200,400,200,100);/****************** */
+            myLv.setBounds(1200,400,200,100);
             wildLv.setBounds(400,100,200,100);
             myname.setBounds(900,400,200,100);
             wildname.setBounds(100,100,200,100);
-            myHp.setBounds(1100,500,200,100);//******************* */ 
+            myHp.setBounds(1100,500,200,100);
             fight1.setBounds(625,725,300,100);
             mybag1.setBounds(975,725,300,100);
             mypo1.setBounds(625,850,300,100);
@@ -185,11 +171,11 @@ public class action extends JFrame{
             
             f.add(topic1);
             f.setLocation(300,0);
-            f.add(myLv);//
+            f.add(myLv);
             f.add(wildLv);
             f.add(myHp);
             f.add(myname);
-            f.add(wildname);//
+            f.add(wildname);
             f.add(myhelthbar);
             f.add(wildhelthbar);
             f.add(describe);

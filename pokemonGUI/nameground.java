@@ -2,11 +2,8 @@ package pokemonGUI;
 
 import javax.swing.*;
 import javax.swing.JFrame;
-
 import main.Trainer;
-
 import java.awt.event.*;
-import java.awt.*;
 
 public class nameground extends JFrame {
     private JTextField name;

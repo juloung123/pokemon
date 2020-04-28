@@ -3,14 +3,12 @@ import java.util.*;
 import Pokemon.*;
 import Basicpoke.*;
 import bag.*;
-import pokemonGUI.*;
 
 public class Trainer{
     private String name;
     private ArrayList<basicpoke> pokemonbag;
     private boolean event;
     private Bag bag;
-    private nameground Settingname,pokemonname;
   
     public Trainer(String name){
         pokemonbag = new ArrayList<basicpoke>();
@@ -18,9 +16,6 @@ public class Trainer{
         bag = new Bag();
         this.name = name;
         bag.addItem(5,0,1,0);
-
-        //Settingname = new nameground();
-        //this.name = Settingname.getName();
     }
     
     public String getname(){

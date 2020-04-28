@@ -20,6 +20,10 @@ public class trader extends JFrame{
         j = new JFrame("trading");
         JPanel mypoke = new JPanel();
         JPanel pospoke = new JPanel();
+        JLabel mid = new JLabel();
+        mid.setBounds(400,0,200,400);
+        mid.setBackground(Color.BLACK);
+        mid.setOpaque(true);
         JButton confirm = new JButton("Confirm");
         confirm.setBounds(450,300,100,20);
         mypoke.setBounds(0,0,400,400);    
@@ -50,9 +54,12 @@ public class trader extends JFrame{
                                 a.setVisible(true);
                                 b.setVisible(true);
                             }
-                        });
+                        }); 
+                        choose.setForeground(Color.WHITE);
+                        j.remove(mid);
                         j.add(choose);
                         j.add(newchoose);
+                        j.add(mid);
                         j.repaint();
                     }
                 }
@@ -67,16 +74,16 @@ public class trader extends JFrame{
         for(int j=0; j < pokemonran; j++){
             int type = (int)(Math.random()*4);
             if(type == 0){
-                pokemons.add(new Bulbasaur("Wild Bulbasaur"));
+                pokemons.add(new Bulbasaur("Bulbasaur"));
             }
             else if(type == 1){
-                pokemons.add(new Squirtle("Wild Squirtle"));
+                pokemons.add(new Squirtle("Squirtle"));
             }
             else if(type == 2){
-                pokemons.add(new Charmander("Wild Chamander"));
+                pokemons.add(new Charmander("Chamander"));
             }
             else if(type == 3){
-                pokemons.add(new Pikachu("Wild Pikachu"));    
+                pokemons.add(new Pikachu("Pikachu"));    
             }
         }
         int k = 1;
@@ -102,8 +109,11 @@ public class trader extends JFrame{
                                 b.setVisible(true);
                             }
                         });
+                        choose.setForeground(Color.WHITE);
+                        j.remove(mid);
                         j.add(choose);
                         j.add(newchoose);
+                        j.add(mid);
                         j.repaint();
                     }
                 }
@@ -120,9 +130,10 @@ public class trader extends JFrame{
                 pokemoncenter T1 = new pokemoncenter(trainer);
             }
         });
-        j.add(confirm);   
+        j.add(confirm);
         j.add(mypoke);
         j.add(pospoke);
+        j.add(mid);
         j.setLocation(400,400);
         j.setSize(1000,400);
         j.setLayout(null);

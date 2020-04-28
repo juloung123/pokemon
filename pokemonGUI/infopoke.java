@@ -1,8 +1,6 @@
 package pokemonGUI;
 
-import main.Trainer;
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.*;
 import javax.swing.JFrame;
 import Basicpoke.*;

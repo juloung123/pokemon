@@ -2,7 +2,6 @@ package pokemonGUI;
 
 import main.Trainer;
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.*;
 import javax.swing.JFrame;
 
@@ -46,28 +45,24 @@ public class select extends JFrame{
             bul.setBounds(605,80,175,300);
             pick1.addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent e){
-                    //selecter = 1;
                     f.setVisible(false);
                     namepokemonground T2 = new namepokemonground(trainer,1);
                 }
             });
             pick2.addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent e){
-                    //selecter = 2;
                     f.setVisible(false);
                     namepokemonground T2 = new namepokemonground(trainer,2);
                 }
             });
             pick3.addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent e){
-                    //selecter = 3;
                     f.setVisible(false);
                     namepokemonground T2 = new namepokemonground(trainer,3);
                 }
             });
             pick4.addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent e){
-                    //selecter = 4;
                     f.setVisible(false);
                     namepokemonground T2 = new namepokemonground(trainer,4);
                 }

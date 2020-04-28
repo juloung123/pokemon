@@ -2,11 +2,8 @@ package pokemonGUI;
 
 import javax.swing.*;
 import javax.swing.JFrame;
-import Basicpoke.*;
 import main.Trainer;
-
 import java.awt.event.*;
-import java.awt.*;
 
 public class pokemoncenter extends JFrame{
     JFrame f;
@@ -28,7 +25,8 @@ public class pokemoncenter extends JFrame{
             background.setBounds(0,0,512,256);
             breeding.addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent e){
-                    
+                    breeding T3 = new breeding(trainer);
+                    f.setVisible(false);
                 }
             });
             trade.addActionListener(new ActionListener(){

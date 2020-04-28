@@ -3,14 +3,8 @@ package pokemonGUI;
 import javax.swing.*;
 import javax.swing.JFrame;
 import java.awt.event.*;
-import java.awt.*;
-import Item.*;
 import Basicpoke.*;
 import main.Trainer;
-import Pokemon.*;
-import bag.*;
-import pokemonGUI.*;
-import java.util.*;
 
 public class Hppotion extends JFrame{
     private JFrame j;

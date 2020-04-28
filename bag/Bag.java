@@ -3,10 +3,6 @@ import java.util.*;
 
 import Basicpoke.basicpoke;
 import Item.*;
-/*import Pokeball.*;
-import hppotion.*;
-import Berry.*;
-import sppotion.*;*/
 
 public class Bag{
     private ArrayList<Item> items;
@@ -121,6 +117,17 @@ public class Bag{
                 thepokemon.useallitem(2,100,bag);
                 items.remove(i);
                 break;
+            }
+        }
+    }
+    public void berrytobreed(){
+        int i=0;
+        for(i=0 ; i < 2 ; i++){
+            for(Item p : items){
+                if(p.getID() == 2){
+                    items.remove(p);
+                    break;
+                }
             }
         }
     }

@@ -1,5 +1,5 @@
 package Basicpoke;
-import java.util.*;
+
 import bag.*;
 
 public class basicpoke implements basicinter{
@@ -90,7 +90,6 @@ public class basicpoke implements basicinter{
     public void regenHp(){
         hp = MaxHp;
         sp = Maxsp;
-        //System.out.println(name + " pokemon HP and SP Will be Regen");
     }
     public void setDamage(int damage){
         int damagecal = damage-def;
