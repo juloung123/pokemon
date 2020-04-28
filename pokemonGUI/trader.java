@@ -14,8 +14,10 @@ public class trader extends JFrame{
     public basicpoke delete ;
     public basicpoke add ;
     public trader(Trainer trainer){
+        delete = null;
+        add = null;
         try{
-        j = new JFrame("Breeding");
+        j = new JFrame("trading");
         JPanel mypoke = new JPanel();
         JPanel pospoke = new JPanel();
         JButton confirm = new JButton("Confirm");
@@ -32,27 +34,30 @@ public class trader extends JFrame{
             JButton b = new JButton("Select");
             b.addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent e){
-                    delete = p;
-                    a.setVisible(false);
-                    b.setVisible(false);
-                    JLabel choose = new JLabel(p.getName());
-                    JButton newchoose = new JButton("back");
-                    choose.setBounds(450,100, 100, 40);
-                    newchoose.setBounds(450,150, 100, 20);
-                    newchoose.addActionListener(new ActionListener(){
-                        public void actionPerformed(ActionEvent e){
-                            delete = null;
-                            choose.setVisible(false);
-                            newchoose.setVisible(false);
-                            a.setVisible(true);
-                            b.setVisible(true);
-                        }
-                    });
-                    j.add(choose);
-                    j.add(newchoose);
-                    j.repaint();
+                    if(delete ==null){
+                        delete = p;
+                        a.setVisible(false);
+                        b.setVisible(false);
+                        JLabel choose = new JLabel(p.getName());
+                        JButton newchoose = new JButton("back");
+                        choose.setBounds(450,100, 100, 40);
+                        newchoose.setBounds(450,150, 100, 20);
+                        newchoose.addActionListener(new ActionListener(){
+                            public void actionPerformed(ActionEvent e){
+                                delete = null;
+                                choose.setVisible(false);
+                                newchoose.setVisible(false);
+                                a.setVisible(true);
+                                b.setVisible(true);
+                            }
+                        });
+                        j.add(choose);
+                        j.add(newchoose);
+                        j.repaint();
+                    }
                 }
             });
+            a.setForeground(Color.white);
             mypoke.add(a);
             mypoke.add(b);
             i++;
@@ -80,25 +85,27 @@ public class trader extends JFrame{
             JButton b = new JButton("Select");
             b.addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent e){
-                    add = p;
-                    a.setVisible(false);
-                    b.setVisible(false);
-                    JLabel choose = new JLabel(p.getName());
-                    JButton newchoose = new JButton("back");
-                    choose.setBounds(450,200, 100, 40);
-                    newchoose.setBounds(450,250, 100, 20);
-                    newchoose.addActionListener(new ActionListener(){
-                        public void actionPerformed(ActionEvent e){
-                            add = null;
-                            choose.setVisible(false);
-                            newchoose.setVisible(false);
-                            a.setVisible(true);
-                            b.setVisible(true);
-                        }
-                    });
-                    j.add(choose);
-                    j.add(newchoose);
-                    j.repaint();
+                    if(add == null){
+                        add = p;
+                        a.setVisible(false);
+                        b.setVisible(false);
+                        JLabel choose = new JLabel(p.getName());
+                        JButton newchoose = new JButton("back");
+                        choose.setBounds(450,200, 100, 40);
+                        newchoose.setBounds(450,250, 100, 20);
+                        newchoose.addActionListener(new ActionListener(){
+                            public void actionPerformed(ActionEvent e){
+                                add = null;
+                                choose.setVisible(false);
+                                newchoose.setVisible(false);
+                                a.setVisible(true);
+                                b.setVisible(true);
+                            }
+                        });
+                        j.add(choose);
+                        j.add(newchoose);
+                        j.repaint();
+                    }
                 }
             });
             pospoke.add(a);
@@ -116,7 +123,7 @@ public class trader extends JFrame{
         j.add(confirm);   
         j.add(mypoke);
         j.add(pospoke);
-        j.setLocation(50,50);
+        j.setLocation(400,400);
         j.setSize(1000,400);
         j.setLayout(null);
         j.setVisible(true);

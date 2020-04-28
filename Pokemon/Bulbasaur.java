@@ -10,7 +10,7 @@ public class Bulbasaur extends basicpoke{
         type = "Grass";
         hp = ((int)(Math.random()* 10)) + 35;
         sp = ((int)(Math.random()* 3)) + 10;
-        atk = ((int)(Math.random()* 24)) + 25;
+        atk = ((int)(Math.random()* 15)) + 25;
         def = ((int)(Math.random()* 20)) + 10;
         skill = ((int)(Math.random()* 15)) + 40;
         level = 1;

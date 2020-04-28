@@ -14,6 +14,8 @@ import java.util.*;
 
 public class action extends JFrame{
     private JFrame f;
+    JPanel myhelthbar,wildhelthbar;
+    JProgressBar myhelth,wildhelth;
     public action(Trainer trainer,basicpoke mypokemon,basicpoke wildpokemon){
         try{
             Font font = new Font("Courier", Font.BOLD,48);
@@ -36,9 +38,24 @@ public class action extends JFrame{
             ImageIcon imgsquirvspik = new ImageIcon("C:/Users/BlazeR/Desktop/pokemon/pokemonGUI/pokemonpic/complete/squirvspik.png");
             ImageIcon imgsquirvssquir = new ImageIcon("C:/Users/BlazeR/Desktop/pokemon/pokemonGUI/pokemonpic/complete/squirvssquir.png");
 
+            myhelthbar = new JPanel();
+            myhelthbar.setBounds(900,500,350,25);
+            myhelthbar.setBackground(Color.BLACK);
+            wildhelthbar = new JPanel();
+            wildhelthbar.setBounds(100,180,350,25);
+            wildhelthbar.setBackground(Color.BLACK);
+            myhelth = new JProgressBar(0,mypokemon.getMaxHp());
+            myhelth.setPreferredSize(new Dimension(350,25));
+            myhelthbar.add(myhelth);
+            wildhelth = new JProgressBar(0,wildpokemon.getMaxHp());
+            wildhelth.setPreferredSize(new Dimension(350,25));
+            wildhelthbar.add(wildhelth);
+            myhelth.setValue(mypokemon.getHp());
+            wildhelth.setValue(wildpokemon.getHp());
+
             f = new JFrame("action");
             JPanel describe = new JPanel();
-            describe.setBounds(80,120,400,200);
+            describe.setBounds(80,120,400,100);
             describe.setBackground(Color.lightGray);
             JPanel describe2 = new JPanel();
             describe2.setBounds(875,400,405,200);
@@ -111,7 +128,6 @@ public class action extends JFrame{
                         public void actionPerformed(ActionEvent e){
                             f.setVisible(false);
                             fight T1 = new fight(trainer,mypokemon,wildpokemon);
-                    
                         }
                     }); 
                 }
@@ -141,6 +157,8 @@ public class action extends JFrame{
             layeredPane.add(myHp, new Integer(200));
             layeredPane.add(myname, new Integer(200));
             f.add(layeredPane); */
+            
+        
             fight1.setFont(font1);
             mybag1.setFont(font1);
             mypo1.setFont(font1);
@@ -164,6 +182,7 @@ public class action extends JFrame{
             mybag1.setBounds(975,725,300,100);
             mypo1.setBounds(625,850,300,100);
             run1.setBounds(975,850,300,100);
+            
             f.add(topic1);
             f.setLocation(300,0);
             f.add(myLv);//
@@ -171,6 +190,8 @@ public class action extends JFrame{
             f.add(myHp);
             f.add(myname);
             f.add(wildname);//
+            f.add(myhelthbar);
+            f.add(wildhelthbar);
             f.add(describe);
             f.add(describe2);
             f.add(topic);

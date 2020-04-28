@@ -38,6 +38,7 @@ public class sppotion extends JFrame{
                             k.setLayout(null);
                             k.setVisible(true);
                             j.setVisible(false);
+                            k.setLocation(100,50);
                         }
                     });
                 }

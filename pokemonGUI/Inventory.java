@@ -71,6 +71,7 @@ public class Inventory extends JFrame{
                             k.setSize(220,100);
                             k.setLayout(null);
                             k.setVisible(true);
+                            k.setLocation(600,600);
                     }
                 });
                 if(bag.checkbag(1) == true){
@@ -96,6 +97,7 @@ public class Inventory extends JFrame{
                                             k.setLayout(null);
                                             k.setVisible(true);
                                             main.setVisible(false);
+                                            k.setLocation(600,600);
                                         }
                                     });
                                 }
@@ -105,7 +107,7 @@ public class Inventory extends JFrame{
                                 i++;
                                 y += 60;
                             }
-            
+                            main.setLocation(80,80);
                             main.setSize(320,400);
                             main.setLayout(null);
                             main.setVisible(true);
@@ -134,6 +136,7 @@ public class Inventory extends JFrame{
                                         l.setLayout(null);
                                         l.setVisible(true);
                                         k.setVisible(false);
+                                        l.setLocation(600,400);
                                     }
                                 });
                                 a.setBounds(30,y,200,40);
@@ -146,6 +149,7 @@ public class Inventory extends JFrame{
                             k.setLayout(null);
                             k.setVisible(true);
                             j.setVisible(false);
+                            k.setLocation(600,400);
                         }
                     });
                 }
