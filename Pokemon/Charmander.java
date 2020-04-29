@@ -8,7 +8,7 @@ public class Charmander extends basicpoke{
         type = "Fire";
         hp = ((int)(Math.random()* 9)) + 30;
         sp = ((int)(Math.random()* 3)) + 8;
-        atk = ((int)(Math.random()* 10)) + 42;
+        atk = ((int)(Math.random()* 10)) + 32;
         def = ((int)(Math.random()* 8)) + 10;
         skill = ((int)(Math.random()* 10)) + 50;
         level = 1;

@@ -165,13 +165,11 @@ public class basicpoke implements basicinter{
         }
     }
     public void changeHpAndSp(){
-        this.hp += 10*level;
-        this.sp += 3*level;
         this.MaxHp += level*15;
         this.Maxsp += level*3;
-        this.atk += level*15;
+        this.atk += level*5;
         this.def += level*4;
-        this.skill += level*15;
+        this.skill += level*10;
     }
     public void setLv(int exp,Bag bag){
         int levelUp;

@@ -8,7 +8,7 @@ public class Squirtle extends basicpoke{
         type = "Water";
         hp = ((int)(Math.random()* 9)) + 35;
         sp = ((int)(Math.random()* 3)) + 10;
-        atk = ((int)(Math.random()* 13)) + 35;
+        atk = ((int)(Math.random()* 13)) + 25;
         def = ((int)(Math.random()* 15)) + 10;
         skill = ((int)(Math.random()* 4)) + 48;
         level = 1;
